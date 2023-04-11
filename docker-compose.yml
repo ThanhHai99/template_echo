@@ -1,0 +1,11 @@
+version: "3"
+services:
+  api:
+    image: golang:1.20.3
+    command: [go, run, main.go]
+    working_dir: /app
+    volumes:
+      - .:/app
+      - .modules:/gopath
+    ports:
+      - "80:80"

@@ -3,6 +3,7 @@ module Template_Echo
 go 1.20
 
 require (
+	github.com/caarlos0/env/v6 v6.10.1 // indirect
 	github.com/labstack/echo/v4 v4.10.2 // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect

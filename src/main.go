@@ -2,9 +2,8 @@ package main
 
 import (
 	"Template_Echo/src/config"
+	"Template_Echo/src/module/app"
 	"fmt"
-	"net/http"
-
 	"github.com/labstack/echo/v4"
 )
 
@@ -14,9 +13,7 @@ func main() {
 	appPort := config.AppPort()
 	e := echo.New()
 
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello World !")
-	})
+	app.AppModule(e)
 
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", appPort)))
 }

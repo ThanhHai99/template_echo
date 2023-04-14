@@ -4,7 +4,7 @@ import (
 	"github.com/labstack/echo/v4"
 
 	"Template_Echo/src/config"
-	module_app "Template_Echo/src/module/app"
+	"Template_Echo/src/module/app"
 	"fmt"
 )
 

@@ -1,6 +1,6 @@
 package shared_dto
 
-import shared_message "Template_Echo/src/shared/message"
+import "Template_Echo/src/shared/message"
 
 type ResponseMessage struct {
 	Vi string

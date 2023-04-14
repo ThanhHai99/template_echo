@@ -1,8 +1,8 @@
 package module_app
 
 import (
-	shared_dto "Template_Echo/src/shared/dto"
-	shared_message "Template_Echo/src/shared/message"
+	"Template_Echo/src/shared/dto"
+	"Template_Echo/src/shared/message"
 )
 
 func GetTest() *shared_dto.ResponseDto {

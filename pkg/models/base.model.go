@@ -1,6 +1,6 @@
-package shared_dto
+package models
 
-import "Template_Echo/src/shared/message"
+import "Template_Echo/pkg/constants"
 
 type ResponseMessage struct {
 	Vi string
@@ -8,7 +8,7 @@ type ResponseMessage struct {
 }
 
 type ResponseDto struct {
-	Code    shared_message.Code
+	Code    constants.Code
 	Data    interface{}
 	Message ResponseMessage
 }

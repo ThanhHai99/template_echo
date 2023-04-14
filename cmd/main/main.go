@@ -1,20 +1,21 @@
 package main
 
 import (
+	"Template_Echo/pkg/config"
+	"Template_Echo/pkg/controllers"
+
 	"github.com/labstack/echo/v4"
 
-	"Template_Echo/src/config"
-	"Template_Echo/src/module/app"
 	"fmt"
 )
 
 func main() {
-	config.LoadEnv()
+	config.Config()
 
 	appPort := config.AppPort()
 	e := echo.New()
 
-	module_app.AppModule(e)
+	controllers.AppModule(e)
 
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", appPort)))
 }

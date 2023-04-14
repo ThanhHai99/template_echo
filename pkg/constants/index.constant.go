@@ -1,4 +1,4 @@
-package shared_message
+package constants
 
 type Code string
 

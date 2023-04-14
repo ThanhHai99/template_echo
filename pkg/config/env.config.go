@@ -7,14 +7,14 @@ import (
 	"github.com/joho/godotenv"
 )
 
-type Configs struct {
+type ConfigEnv struct {
 	AppEnv  string `env:"APP_ENV" envDefault:"local"`
 	AppPort int16  `env:"APP_PORT" envDefault:"80"`
 }
 
-var configs = &Configs{}
+var configEnv = &ConfigEnv{}
 
-func LoadEnv() bool {
+func Env() bool {
 	// Load file env
 	e0 := godotenv.Load("env/.env")
 	if e0 != nil {
@@ -24,17 +24,17 @@ func LoadEnv() bool {
 	fmt.Printf("Load env config successfully")
 
 	// Load env to Configs
-	if e1 := env.Parse(configs); e1 != nil {
-		fmt.Printf("Load env to configs error. Err: %s", e1)
+	if e1 := env.Parse(configEnv); e1 != nil {
+		fmt.Printf("Load env to configEnv error. Err: %s", e1)
 	}
 
 	return true
 }
 
 func AppEnv() string {
-	return configs.AppEnv
+	return configEnv.AppEnv
 }
 
 func AppPort() int16 {
-	return configs.AppPort
+	return configEnv.AppPort
 }

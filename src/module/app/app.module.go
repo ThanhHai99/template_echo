@@ -1,13 +1,17 @@
-package app
+package module_app
 
 import (
-	"github.com/labstack/echo/v4"
 	"net/http"
+
+	"github.com/labstack/echo/v4"
 )
 
 func AppModule(e *echo.Echo) *echo.Echo {
+
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "GET hehe boi")
+		var res = GetTest()
+		return c.JSON(http.StatusOK, res)
 	})
+
 	return e
 }

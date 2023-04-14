@@ -1,10 +1,11 @@
 package main
 
 import (
-	"Template_Echo/src/config"
-	"Template_Echo/src/module/app"
-	"fmt"
 	"github.com/labstack/echo/v4"
+
+	"Template_Echo/src/config"
+	module_app "Template_Echo/src/module/app"
+	"fmt"
 )
 
 func main() {
@@ -13,7 +14,7 @@ func main() {
 	appPort := config.AppPort()
 	e := echo.New()
 
-	app.AppModule(e)
+	module_app.AppModule(e)
 
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", appPort)))
 }

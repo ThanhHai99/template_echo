@@ -4,7 +4,16 @@ import (
 	"Template_Echo/pkg/configs"
 	"Template_Echo/pkg/constants"
 	"fmt"
+	"github.com/go-redis/redis"
 )
+
+func Init() *redis.Client {
+	return redis.NewClient(&redis.Options{
+		Addr: configs.RedisHost(),
+		Password: "",
+		DB: 0,
+	})
+}
 
 func BindKey(prefix string, data [][]interface{}) string {
 	cachingPower := configs.RedisPower()

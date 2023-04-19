@@ -2,38 +2,45 @@
 
 ## Feature branch
 
-| Branch         | Status | Detail                                                                  |
-| -------------- | ------ | ----------------------------------------------------------------------- |
-| master         | Open   | Origin, Logger, Config, Dockerfile, docker-compose, Precommit, Prettier |
-| cqrs           | Open   | CQRS                                                                    |
-| configs        | Open   | Configs                                                                 |
-| microservice   | Open   | PubSub, NATs, Microservice                                              |
-| typeorm        | Open   | TypeORM, PostgreSQL                                                     |
-| prisma         | Open   | Prisma                                                                  |
-| caching        | Open   | Redis                                                                   |
-| queuing        | Open   | RabbitMQ, (kafka)                                                       |
-| mail           | Open   | Send mail                                                               |
-| rbac           | Open   | Authentication, Authorization, Permission                               |
-| oauth          | Open   |                                                                         |
-| cicd           | Open   | CI/CD                                                                   |
-| nx             | Open   | NX Workspace                                                            |
-| elasticsearch  | Open   |                                                                         |
-| mongoose       | Open   | Mongoose, MongoDB                                                       |
-| grpc           | Open   |                                                                         |
-| firebase       | Open   |                                                                         |
-| graphql        | Open   | GraphQL                                                                 |
-| interceptor    | Open   | Interceptor                                                             |
-| image          | Open   | Upload, Download                                                        |
-| video          | Open   | Upload, Download, (Streaming)                                           |
-| clean          | Open   | Clean architecture                                                      |
-| solid          | Open   |                                                                         |
-| observer       | Open   | [Design-Pattern] Observer Pattern                                       |
-| facade         | Open   | [Design-Pattern] Facede Pattern                                         |
-| proxy          | Open   | [Design-Pattern] Proxy Pattern                                          |
-| simple_factory | Open   | [Design-Pattern] Simple Factory Pattern                                 |
-| factory_method | Open   | [Design-Pattern] Factory Method Pattern                                 |
-| singleton      | Open   | [Design-Pattern] Singleton Pattern                                      |
-| prototype      | Open   | [Design-Pattern] Prototype Pattern                                      |
+${\color{darkgrey}\textbf{Note}}$ &#58; &emsp;
+${\color{red}\textbf{Open}}$ &emsp;
+${\color{orange}\textbf{InProress}}$ &emsp;
+${\color{green}\textbf{Done}}$ &emsp;
+
+| Branch         | Status                               | Detail                                                                  |
+| -------------- | ------------------------------------ | ----------------------------------------------------------------------- |
+| master         | Open                                 | Origin, Logger, Config, Dockerfile, docker-compose, Precommit, Prettier |
+| session        | ${\color{red}\textbf{Open}}$         | Session                                                                 |
+| cookie         | ${\color{red}\textbf{Open}}$         | Cookie                                                                  |
+| cqrs           | ${\color{red}\textbf{Open}}$         | CQRS                                                                    |
+| configs        | ${\color{green}\textbf{Done}}$       | Configs                                                                 |
+| microservice   | ${\color{red}\textbf{Open}}$         | PubSub, NATs, Microservice                                              |
+| typeorm        | ${\color{red}\textbf{Open}}$         | TypeORM, PostgreSQL                                                     |
+| prisma         | ${\color{red}\textbf{Open}}$         | Prisma                                                                  |
+| caching        | ${\color{orange}\textbf{InProress}}$ | Redis, Memcached                                                        |
+| queuing        | ${\color{red}\textbf{Open}}$         | RabbitMQ, (kafka)                                                       |
+| mail           | ${\color{red}\textbf{Open}}$         | Send mail                                                               |
+| rbac           | ${\color{red}\textbf{Open}}$         | Authentication, Authorization, Permission                               |
+| oauth          | ${\color{red}\textbf{Open}}$         |                                                                         |
+| cicd           | ${\color{red}\textbf{Open}}$         | CI/CD                                                                   |
+| nx             | ${\color{red}\textbf{Open}}$         | NX Workspace                                                            |
+| elasticsearch  | ${\color{red}\textbf{Open}}$         | Elasticsearch                                                           |
+| mongoose       | ${\color{red}\textbf{Open}}$         | Mongoose, MongoDB                                                       |
+| grpc           | ${\color{red}\textbf{Open}}$         |                                                                         |
+| firebase       | ${\color{red}\textbf{Open}}$         |                                                                         |
+| graphql        | ${\color{red}\textbf{Open}}$         | GraphQL                                                                 |
+| interceptor    | ${\color{red}\textbf{Open}}$         | Interceptor                                                             |
+| image          | ${\color{red}\textbf{Open}}$         | Upload, Download                                                        |
+| video          | ${\color{red}\textbf{Open}}$         | Upload, Download, (Streaming)                                           |
+| clean          | ${\color{red}\textbf{Open}}$         | Clean architecture                                                      |
+| solid          | ${\color{red}\textbf{Open}}$         |                                                                         |
+| observer       | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Observer Pattern                                       |
+| facade         | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Facede Pattern                                         |
+| proxy          | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Proxy Pattern                                          |
+| simple_factory | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Simple Factory Pattern                                 |
+| factory_method | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Factory Method Pattern                                 |
+| singleton      | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Singleton Pattern                                      |
+| prototype      | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Prototype Pattern                                      |
 
 ## Version
 

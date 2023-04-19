@@ -10,6 +10,7 @@ require (
 
 require (
 	github.com/caarlos0/env/v6 v6.10.1 // indirect
+	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/labstack/echo/v4 v4.10.2 // indirect
 	github.com/labstack/gommon v0.4.0 // indirect

@@ -2,7 +2,7 @@ package main
 
 import (
 	"Template_Echo/pkg/configs"
-	"Template_Echo/pkg/controllers"
+	"Template_Echo/pkg/routes"
 	"Template_Echo/pkg/utils"
 	"fmt"
 
@@ -12,7 +12,8 @@ import (
 
 func main() {
 	app := echo.New()
-	controllers.Controllers(app)
+	routes.Routes(app)
+
 	configs.Configs()
 	appPort := configs.AppPort()
 

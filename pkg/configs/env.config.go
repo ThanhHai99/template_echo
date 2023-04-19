@@ -8,8 +8,10 @@ import (
 )
 
 type ConfigEnv struct {
-	AppEnv  string `env:"APP_ENV" envDefault:"local"`
-	AppPort int16  `env:"APP_PORT" envDefault:"80"`
+	AppEnv     string `env:"APP_ENV" envDefault:"local"`
+	AppPort    int16  `env:"APP_PORT" envDefault:"80"`
+	RedisHost  string `env:"REDIS_HOST" envDefault:"http://localhost:6379"`
+	RedisPower string `env:"REDIS_POWER" envDefault:"ON"`
 }
 
 var configEnv = &ConfigEnv{}
@@ -37,4 +39,12 @@ func AppEnv() string {
 
 func AppPort() int16 {
 	return configEnv.AppPort
+}
+
+func RedisHost() string {
+	return configEnv.RedisHost
+}
+
+func RedisPower() string {
+	return configEnv.RedisPower
 }

@@ -9,4 +9,5 @@ import (
 func RedisRoute(app *echo.Echo) {
 	var redisRoute = "/redis"
 	app.GET(redisRoute, controllers.GetRedis)
+	app.POST(redisRoute, controllers.SetRedis)
 }

@@ -1,5 +1,6 @@
 package services
 
-func GetHello() string {
+func GetHello(page string, limit string) string {
+
 	return "Hello World"
 }

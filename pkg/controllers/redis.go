@@ -4,14 +4,15 @@ import (
 	"Template_Echo/pkg/constants"
 	"Template_Echo/pkg/models"
 	"Template_Echo/pkg/services"
-	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
 
 func GetRedis(c echo.Context) error {
-	data := services.GetHello()
+	page := c.QueryParam("page")
+	limit := c.QueryParam("limit")
+	data := services.GetHello(page, limit)
 	res := &models.ResponseDto{
 		Code: constants.SUCCESS,
 		Data: data,
@@ -25,10 +26,11 @@ func GetRedis(c echo.Context) error {
 }
 
 func SetRedis(c echo.Context) error {
-	fmt.Println(c.Request().Header)
-	fmt.Println(c.QueryParams())
-	fmt.Println(c.Request().Body)
-	data := services.GetHello()
+	//data
+	page := c.QueryParam("page")
+	limit := c.QueryParam("limit")
+
+	data := services.GetHello(page, limit)
 	res := &models.ResponseDto{
 		Code: constants.SUCCESS,
 		Data: data,

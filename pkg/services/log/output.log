@@ -2,3 +2,7 @@
 {"level":"error","time":"2023-04-20T11:41:14+07:00","message":"REDIS IS NOT READY"}
 {"level":"info","logDirectory":"log/","fileName":"log/output.log","maxSizeMB":8,"maxBackups":28,"maxAgeInDays":1,"time":"2023-04-20T11:45:32+07:00","message":"logging configured"}
 {"level":"info","time":"2023-04-20T11:45:32+07:00","message":"REDIS IS READY"}
+{"level":"info","logDirectory":"log/","fileName":"log/output.log","maxSizeMB":8,"maxBackups":28,"maxAgeInDays":1,"time":"2023-04-23T19:31:36+07:00","message":"logging configured"}
+{"level":"info","time":"2023-04-23T19:31:36+07:00","message":"REDIS IS READY"}
+{"level":"info","logDirectory":"log/","fileName":"log/output.log","maxSizeMB":8,"maxBackups":28,"maxAgeInDays":1,"time":"2023-04-23T19:33:40+07:00","message":"logging configured"}
+{"level":"info","time":"2023-04-23T19:33:40+07:00","message":"REDIS IS READY"}

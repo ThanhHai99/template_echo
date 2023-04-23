@@ -10,7 +10,9 @@ import (
 )
 
 func GetHello(c echo.Context) error {
-	data := services.GetHello()
+	page := c.QueryParam("page")
+	limit := c.QueryParam("limit")
+	data := services.GetHello(page, limit)
 	res := &models.ResponseDto{
 		Code: constants.SUCCESS,
 		Data: data,

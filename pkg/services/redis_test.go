@@ -8,30 +8,36 @@ import (
 
 func TestBindKey(t *testing.T) {
 	expect := "ms_example:f1:a:1:b:2"
-	actual := BindKey("f1", map[string]string{"a": "1", "b": "2"})
+	redisService := RedisService{}
+	actual := redisService.BindKey("f1", map[string]string{"a": "1", "b": "2"})
 	assert.Equal(t, expect, actual)
 }
 
 func TestIsConnected(t *testing.T) {
 	ctx := context.Background()
 	expect := true
-	actual := IsConnected(ctx)
+	redisService := RedisService{}
+	actual := redisService.GetInstant(ctx).IsConnected(ctx)
 	assert.Equal(t, expect, actual)
 }
 
 func TestSet(t *testing.T) {
 	ctx := context.Background()
 	expect := true
-	key := BindKey("f1", map[string]string{"page": "1", "limit": "10"})
-	actual := Set(ctx, key, "heheboi", "60s")
+	redisService := RedisService{}
+	key := redisService.BindKey("f1", map[string]string{"page": "1", "limit": "10"})
+	redisIns := redisService.GetInstant(ctx)
+	actual := redisIns.Set(ctx, key, "heheboi", "60s")
 	assert.Equal(t, expect, actual)
 }
 
 func TestGet(t *testing.T) {
 	ctx := context.Background()
 	expect := "heheboi"
-	key := BindKey("f1", map[string]string{"page": "1", "limit": "10"})
-	actual := Get(ctx, key)
+	redisService := RedisService{}
+	key := redisService.BindKey("f1", map[string]string{"page": "1", "limit": "10"})
+	redisIns := redisService.GetInstant(ctx)
+	actual := redisIns.Get(ctx, key)
 	assert.Equal(t, expect, actual)
 }
 

@@ -9,10 +9,10 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func GetHello(c echo.Context) error {
+func GetData(c echo.Context) error {
 	page := c.QueryParam("page")
 	limit := c.QueryParam("limit")
-	data := services.GetHello(page, limit)
+	data := services.GetData(page, limit)
 	res := &models.ResponseDto{
 		Code: constants.SUCCESS,
 		Data: data,

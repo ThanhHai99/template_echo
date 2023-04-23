@@ -37,30 +37,16 @@ func (s *RedisService) GetInstant(ctx context.Context) *RedisService {
 		return redisInstants
 	} else {
 		redisOptions := &redis.Options{
-			Network:            "",
-			Addr:               configs.RedisHost(),
-			Dialer:             nil,
-			OnConnect:          nil,
-			Password:           "",
-			DB:                 0,
-			MaxRetries:         0,
-			MinRetryBackoff:    0,
-			MaxRetryBackoff:    0,
-			DialTimeout:        0,
-			ReadTimeout:        0,
-			WriteTimeout:       0,
-			PoolSize:           0,
-			MinIdleConns:       0,
-			MaxConnAge:         0,
-			PoolTimeout:        0,
-			IdleTimeout:        0,
-			IdleCheckFrequency: 0,
-			TLSConfig:          nil,
+			Addr:        configs.RedisHost(),
+			Password:    "",
+			DB:          0, // use default DB
+			DialTimeout: 150 * time.Millisecond,
+			ReadTimeout: 100 * time.Millisecond,
+			MaxRetries:  0,
 		}
 
 		rdb := redis.NewClient(redisOptions)
 		redisInstants = &RedisService{Client: rdb}
-
 		return redisInstants
 	}
 }
@@ -137,6 +123,7 @@ func (s *RedisService) Get(ctx context.Context, key string) string {
 	result, e0 := redisInstants.Client.Get(ctx, key).Result()
 	if e0 != nil {
 		fmt.Printf("%s:cache:get\t %s ==> %s \n", constants.REDIS_PREFIX_MAIN, key, constants.REDIS_FAIL_STATUS)
+		fmt.Println(e0)
 		return ""
 	}
 	fmt.Printf("%s:cache:get\t %s ==> %s \n", constants.REDIS_PREFIX_MAIN, key, constants.REDIS_SUCCESS_STATUS)

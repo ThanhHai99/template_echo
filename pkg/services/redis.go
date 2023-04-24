@@ -13,7 +13,7 @@ import (
 )
 
 type RedisService struct {
-	Client *redis.Client
+	client *redis.Client
 }
 
 var (
@@ -26,7 +26,7 @@ func (s *RedisService) GetInstant(ctx context.Context) *RedisService {
 	if redisInstants == nil {
 		isInitialized = false
 	} else {
-		if e0 := redisInstants.Client.Ping(ctx).Err(); e0 != nil {
+		if e0 := redisInstants.client.Ping(ctx).Err(); e0 != nil {
 			isInitialized = false
 		} else {
 			isInitialized = true
@@ -46,19 +46,19 @@ func (s *RedisService) GetInstant(ctx context.Context) *RedisService {
 		}
 
 		rdb := redis.NewClient(redisOptions)
-		redisInstants = &RedisService{Client: rdb}
+		redisInstants = &RedisService{client: rdb}
 		return redisInstants
 	}
 }
 
 func (s *RedisService) IsConnected(ctx context.Context) bool {
-	if s.Client == nil {
+	if s.client == nil {
 		utils.Log().Error().Msg("REDIS IS NOT READY")
 		lostConnection = true
 		return false
 	}
 
-	e0 := s.Client.Ping(ctx).Err()
+	e0 := s.client.Ping(ctx).Err()
 	if e0 != nil {
 		utils.Log().Error().Msg("REDIS IS NOT READY")
 		lostConnection = true
@@ -106,7 +106,7 @@ func (s *RedisService) Set(ctx context.Context, key string, value string, expire
 		expireTimes, _ = time.ParseDuration(expireTimeDefault)
 	}
 
-	if e1 := redisInstants.Client.Set(ctx, key, value, expireTimes).Err(); e1 == nil {
+	if e1 := redisInstants.client.Set(ctx, key, value, expireTimes).Err(); e1 == nil {
 		fmt.Printf("%s:cache:set\t %s ==> %s \n", constants.REDIS_PREFIX_MAIN, key, constants.REDIS_SUCCESS_STATUS)
 	} else {
 		fmt.Printf("%s:cache:set\t %s ==> %s \n", constants.REDIS_PREFIX_MAIN, key, constants.REDIS_FAIL_STATUS)
@@ -120,7 +120,7 @@ func (s *RedisService) Get(ctx context.Context, key string) string {
 	if cachingPower == constants.OFF.String() {
 		return ""
 	}
-	result, e0 := redisInstants.Client.Get(ctx, key).Result()
+	result, e0 := redisInstants.client.Get(ctx, key).Result()
 	if e0 != nil {
 		fmt.Printf("%s:cache:get\t %s ==> %s \n", constants.REDIS_PREFIX_MAIN, key, constants.REDIS_FAIL_STATUS)
 		fmt.Println(e0)
@@ -131,16 +131,16 @@ func (s *RedisService) Get(ctx context.Context, key string) string {
 }
 
 func (s *RedisService) Keys(ctx context.Context) ([]string, error) {
-	return s.Client.Keys(ctx, constants.REDIS_PREFIX_MAIN+"*").Result()
+	return s.client.Keys(ctx, constants.REDIS_PREFIX_MAIN+"*").Result()
 }
 
 func (s *RedisService) Clear(ctx context.Context) {
 	keys, _ := s.Keys(ctx)
-	pipe := s.Client.Pipeline()
+	pipe := s.client.Pipeline()
 	for _, key := range keys {
-		pipe.Del(ctx, key).Err()
+		_ = pipe.Del(ctx, key).Err()
 	}
-	pipe.Exec(ctx)
+	_, _ = pipe.Exec(ctx)
 
 	utils.Log().Warn().Msg("RedisClient.Clear")
 }

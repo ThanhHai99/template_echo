@@ -15,9 +15,10 @@ ${\color{green}\textbf{Done}}$ &emsp;
 | cqrs           | ${\color{red}\textbf{Open}}$         | CQRS                                                                    |
 | configs        | ${\color{green}\textbf{Done}}$       | Configs                                                                 |
 | microservice   | ${\color{red}\textbf{Open}}$         | PubSub, NATs, Microservice                                              |
+| gorm           | ${\color{orange}\textbf{InProress}}$ | GORM, PostgreSQL                                                        |
 | typeorm        | ${\color{red}\textbf{Open}}$         | TypeORM, PostgreSQL                                                     |
 | prisma         | ${\color{red}\textbf{Open}}$         | Prisma                                                                  |
-| caching        | ${\color{orange}\textbf{InProress}}$ | Redis, Memcached                                                        |
+| caching        | ${\color{green}\textbf{Done}}$       | Redis, Memcached                                                        |
 | queuing        | ${\color{red}\textbf{Open}}$         | RabbitMQ, (kafka)                                                       |
 | mail           | ${\color{red}\textbf{Open}}$         | Send mail                                                               |
 | rbac           | ${\color{red}\textbf{Open}}$         | Authentication, Authorization, Permission                               |

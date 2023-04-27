@@ -2,7 +2,9 @@ package main
 
 import (
 	"Template_Echo/pkg/configs"
+	"Template_Echo/pkg/models"
 	"Template_Echo/pkg/routes"
+	"Template_Echo/pkg/services"
 	"Template_Echo/pkg/utils"
 	"fmt"
 
@@ -23,6 +25,9 @@ func main() {
 
 	app.Use(utils.LoggerWithConfig(logConfig))
 	app.Use(middleware.Recover())
+
+	db := services.DB()
+	db.AutoMigrate(&models.UserModel{})
 
 	app.Logger.Fatal(app.Start(fmt.Sprintf(":%d", appPort)))
 }

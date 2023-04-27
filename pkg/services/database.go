@@ -5,14 +5,15 @@ import (
 	"Template_Echo/pkg/utils"
 	"fmt"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"time"
 )
 
 type DatabaseConfig struct {
-	IP           string `env:"DB_HOST" envDefault:"localhost"`
+	Host         string `env:"DB_HOST" envDefault:"localhost"`
 	Port         int    `env:"DB_PORT" envDefault:"5432"`
 	DatabaseName string `env:"DB_NAME" envDefault:"echo"`
-	User         string `env:"DB_USER" envDefault:"root"`
+	UserName     string `env:"DB_USER" envDefault:"root"`
 	Password     string `env:"DB_PASS" envDefault:"root"`
 	GormPreload  bool   `env:"DB_PRELOAD" envDefault:"true"`
 }
@@ -28,7 +29,8 @@ func DB() *gorm.DB {
 			utils.Log().Info().Msg("Set auto preload mode")
 		}
 
-		connectionString := fmt.Sprintf("postgresql://%s@%s:%d/%s?sslmode=disable", config.User, config.IP, config.Port, config.DatabaseName)
+		//connectionString := fmt.Sprintf("postgresql://%s@%s:%d/%s?sslmode=disable", config.User, config.IP, config.Port, config.DatabaseName)
+		connectionString := fmt.Sprintf("postgresql://root:root@localhost:5432/echo?sslmode=disable")
 		db, e0 = gorm.Open("postgres", connectionString)
 		if e0 != nil {
 			utils.Log().Error().Err(e0).Msg("failed to connect database")

@@ -42,7 +42,7 @@ ${\color{green}\textbf{Done}}$ &emsp;
 | factory_method | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Factory Method Pattern                                 |
 | singleton      | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Singleton Pattern                                      |
 | prototype      | ${\color{red}\textbf{Open}}$         | [Design-Pattern] Prototype Pattern                                      |
-
+ q
 ## Version
 
 Echo `v4.10.2`<br/>

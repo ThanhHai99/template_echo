@@ -2,8 +2,7 @@ FROM go:1.20.3
 
 WORKDIR /Template_Echo
 
-COPY go.mod .
-COPY go.sum .
+COPY go.mod, go.sum ./
 
 RUN go mod download
 

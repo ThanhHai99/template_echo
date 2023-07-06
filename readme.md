@@ -9,7 +9,7 @@ ${\color{green}\textbf{Done}}$ &emsp;
 
 | Branch            | Status                               | Detail                                                                  |
 | ----------------- | ------------------------------------ | ----------------------------------------------------------------------- |
-| master            | ${\color{orange}\textbf{InProress}}$ | Origin, Logger, Config, Dockerfile, docker-compose, Precommit, Prettier |
+| master            | ${\color{green}\textbf{Done}}$       | Origin, Logger, Config, Dockerfile, docker-compose, Precommit, Prettier |
 | session           | ${\color{red}\textbf{Open}}$         | Session                                                                 |
 | cookie            | ${\color{red}\textbf{Open}}$         | Cookie                                                                  |
 | cqrs              | ${\color{red}\textbf{Open}}$         | CQRS                                                                    |
